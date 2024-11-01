@@ -12,11 +12,10 @@ public class Program {
 
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 
-		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new java.util.Date(), 4000.0, dep);
+		Seller seller = sellerDao.findById(2);
 
-		sellerDao.insert(newSeller);
+		sellerDao.deleteById(2);
 
-		System.out.println("Inserted! New id = " + newSeller.getId());
-		
+		System.out.println(sellerDao.findAll());
 	}
 }
